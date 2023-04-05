@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ $(curl -sL "https://demo.kavitareader.com/api/health" 2>/dev/null) = "Ok" ]]; then
+    exit 0
+else
+    exit 1
+fi
