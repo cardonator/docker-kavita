@@ -3,4 +3,5 @@
 
 # permissions
 lsiown -R abc:abc \
-    /config
+    /app/kavita/bin/config
+ln -s /config /app/kavita/bin/config

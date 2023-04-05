@@ -13,7 +13,7 @@ RUN \
   tar xzf \
     /tmp/kavita.tar.gz -C \
     /app/kavita/bin --strip-components=1 && \
-  chmod 777 /app/kavita/bin/Kavita && \
+  chmod +x /app/kavita/bin/Kavita && \
   echo "**** cleanup ****" && \
   rm -rf \
     /tmp/*
@@ -34,15 +34,3 @@ VOLUME /config
 #   "IpAddresses": ""
 # }' >> /kavita/config/appsettings.json
 # fi
-
-# chmod +x /app/kavita/bin/Kavita
-
-# /app/kavita/bin/Kavita
-
-#   tar xf \
-#     /tmp/kavita.tar.gz -C \
-#     /app/sonarr/bin --strip-components=1 && \
-#   echo "UpdateMethod=docker\nBranch=${SONARR_BRANCH}\nPackageVersion=${VERSION}\nPackageAuthor=[linuxserver.io](https://linuxserver.io)" > /app/sonarr/package_info && \
-#   rm -rf /app/sonarr/bin/Sonarr.Update && \
-#   echo "**** cleanup ****" && \
-#   apt-get clean && \
