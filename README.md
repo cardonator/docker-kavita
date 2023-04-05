@@ -4,5 +4,5 @@ Example to get started:
 
 ```
 docker build -t docker-kavita:debug .
-docker run --rm -it -v ./config:/app/kavita/bin/config -e PUID=1001 -e PGID=1001 docker-kavita:debug
+docker run -v ./config:/config -e PUID=1001 -e PGID=1001 docker-kavita:debug
 ```

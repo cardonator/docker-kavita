@@ -1,7 +1,11 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
+# copy config
+if [ ! -f "/config/appsettings.json" ]; then
+    cp /defaults/appsettings.json /config/appsettings.json
+fi
+
 # permissions
 lsiown -R abc:abc \
     /app/kavita/bin/config
-ln -s /config /app/kavita/bin/config
