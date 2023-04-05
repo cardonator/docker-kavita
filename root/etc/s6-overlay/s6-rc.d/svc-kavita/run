@@ -3,5 +3,4 @@
 
 exec \
     s6-notifyoncheck -d -n 300 -w 1000 \
-        cd /app/kavita/bin s6-setuidgid abc /app/kavita/bin/Kavita \
-        -nobrowser -data=/config
+        cd /app/kavita/bin s6-setuidgid abc /app/kavita/bin/Kavita
