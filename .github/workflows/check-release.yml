@@ -2,6 +2,7 @@ name: Get latest kavita release
 on:
   schedule:
     - cron: '0 10 * * *'
+  workflow_dispatch:
 
 jobs:
   get-release:
