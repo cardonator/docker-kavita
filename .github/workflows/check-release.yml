@@ -8,10 +8,6 @@ jobs:
   get-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
-        with:
-          ssh-key: "${{ secrets.COMMIT_KEY }}"
       - name: Compare releases
         id: compare-releases
         uses: NickLiffen/compare-releases@v2.0.4
@@ -28,7 +24,7 @@ jobs:
         if: steps.checkTag.outputs.exists == 'false'
         uses: mathieudutour/github-tag-action@v6.1
         with:
-          #github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTIONS_PAT }}
           custom_tag: ${{ steps.compare-releases.outputs.tagName }}
           tag_prefix: ''
       - name: Create a GitHub release
@@ -38,3 +34,4 @@ jobs:
           tag: ${{ steps.tag_version.outputs.new_tag }}
           name: Release ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
+          token: ${{ secrets.ACTIONS_PAT }}
