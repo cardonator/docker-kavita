@@ -3,5 +3,4 @@
 
 exec \
     s6-notifyoncheck -d -n 300 -w 1000 \
-        cd / s6-setuidgid abc /app/kavita/bin/Kavita
-# app config is based on the folder the app is run from
+        cd /app/kavita/bin s6-setuidgid abc /app/kavita/bin/Kavita
