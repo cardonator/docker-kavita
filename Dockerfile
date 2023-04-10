@@ -16,7 +16,9 @@ RUN \
   chmod +x /app/kavita/bin/Kavita && \
   echo "**** cleanup ****" && \
   rm -rf \
-    /tmp/*
+    /tmp/* \
+    /app/kavita/bin/config && \
+  ln -s /config /app/kavita/bin/config
 
 # add local files
 COPY root/ /
