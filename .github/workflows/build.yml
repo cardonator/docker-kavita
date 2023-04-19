@@ -35,8 +35,8 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            name=cardonator/docker-kavita
-            name=ghcr.io/${{ github.repository }}
+            name=cardonator/kavita
+            name=ghcr.io/cardonator/kavita
       
       - name: Build and push Docker images
         uses: docker/build-push-action@v4
